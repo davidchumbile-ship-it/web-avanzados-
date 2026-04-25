@@ -5,75 +5,247 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Social Media - Posts</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #0f0f0f;
+            color: #fff;
+            min-height: 100vh;
+        }
+
+        nav {
+            background: #161616;
+            border-bottom: 1px solid #222;
+            padding: 18px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #00c9ff, #92fe9d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .btn-new {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #00c9ff, #92fe9d);
+            color: #0f0f0f;
+            font-weight: 700;
+            font-size: 0.9rem;
+            padding: 10px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 0 15px rgba(0, 201, 255, 0.3);
+        }
+
+        .btn-new:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 25px rgba(0, 201, 255, 0.5);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 24px;
+        }
+
+        .page-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #eee;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 24px;
+        }
+
+        .card {
+            background: #1a1a1a;
+            border: 1px solid #2a2a2a;
+            border-radius: 16px;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0, 201, 255, 0.1);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+
+        .card-content {
+            font-size: 0.9rem;
+            color: #888;
+            line-height: 1.6;
+            margin-bottom: 14px;
+        }
+
+        .hashtags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 16px;
+        }
+
+        .chip {
+            background: #252525;
+            color: #00c9ff;
+            font-size: 0.75rem;
+            padding: 4px 12px;
+            border-radius: 50px;
+            border: 1px solid #2a2a2a;
+        }
+
+        .card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 14px;
+            border-top: 1px solid #2a2a2a;
+        }
+
+        .author {
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .author span {
+            color: #92fe9d;
+            font-weight: 600;
+        }
+
+        .actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        .btn-edit,
+        .btn-delete {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.2s;
+            text-decoration: none;
+        }
+
+        .btn-edit {
+            background: #1e3a3a;
+            color: #00c9ff;
+        }
+
+        .btn-edit:hover {
+            background: #00c9ff;
+            color: #0f0f0f;
+        }
+
+        .btn-delete {
+            background: #3a1e1e;
+            color: #ff6b6b;
+        }
+
+        .btn-delete:hover {
+            background: #ff6b6b;
+            color: #fff;
+        }
+
+        .empty {
+            text-align: center;
+            color: #555;
+            padding: 80px 0;
+            font-size: 1.1rem;
+        }
+    </style>
 </head>
 
-<body class="grey lighten-4">
+<body>
     <nav>
-        <div class="nav-wrapper teal">
-            <a href="#!" class="brand-logo center">Social Media</a>
-        </div>
+        <div class="nav-logo">● SocialMedia</div>
+        <a href="/posts/create" class="btn-new">+ Nuevo Post</a>
     </nav>
-    <div class="container" style="margin-top: 30px;">
-        <div class="row">
-            <div class="col s12 center-align">
-                <a href="/posts/create" class="btn-large teal waves-effect waves-light">
-                    <i class="material-icons left">add</i>Nuevo Post
-                </a>
-            </div>
-        </div>
-        <div class="row">
-            <% if (posts.length===0) { %>
-                <div class="col s12 center-align">
-                    <p class="flow-text">No hay posts aún. ¡Crea el primero!</p>
-                </div>
-                <% } %>
+    <div class="container">
+        <h1 class="page-title">Publicaciones</h1>
+        <% if (posts.length===0) { %>
+            <div class="empty">No hay posts aún. ¡Crea el primero!</div>
+            <% } %>
+                <div class="grid">
                     <% posts.forEach(post=> { %>
-                        <div class="col s12 m6 l4">
-                            <div class="card">
-                                <div class="card-image">
-                                    <img src="<%= post.imageUrl || 'https://media.istockphoto.com/id/627795510/photo/example.jpg?s=612x612&w=0&k=20&c=lpUf5rjPVd6Kl_M6heqC8sUncR4FLmtsRzeYdTr5X_I=' %>"
-                                        alt="Imagen del post">
+                        <div class="card">
+                            <img src="<%= post.imageUrl || 'https://media.istockphoto.com/id/627795510/photo/example.jpg?s=612x612&w=0&k=20&c=lpUf5rjPVd6Kl_M6heqC8sUncR4FLmtsRzeYdTr5X_I=' %>"
+                                alt="imagen">
+                            <div class="card-body">
+                                <div class="card-title">
+                                    <%= post.title %>
                                 </div>
                                 <div class="card-content">
-                                    <span class="card-title">
-                                        <%= post.title %>
-                                    </span>
-                                    <p>
-                                        <%= post.content %>
-                                    </p>
-                                    <% if (post.hashtags && post.hashtags.length> 0) { %>
-                                        <p style="margin-top: 10px;">
-                                            <% post.hashtags.forEach(tag=> { %>
-                                                <span class="chip">#<%= tag %></span>
-                                                <% }) %>
-                                        </p>
-                                        <% } %>
+                                    <%= post.content %>
                                 </div>
-                                <div class="card-action">
-                                    <span><strong>Autor:</strong>
-                                        <%= post.user ? post.user.name + ' ' + post.user.lastName : 'Desconocido' %>
-                                    </span>
-                                    <div class="right">
-                                        <a href="/posts/edit/<%= post._id %>" class="btn-flat">
-                                            <i class="material-icons teal-text">edit</i>
-                                        </a>
-                                        <form action="/posts/delete/<%= post._id %>" method="POST"
-                                            style="display:inline;">
-                                            <button type="submit" class="btn-flat"
-                                                onclick="return confirm('¿Eliminar este post?')">
-                                                <i class="material-icons red-text">delete</i>
-                                            </button>
-                                        </form>
+                                <% if (post.hashtags && post.hashtags.length> 0) { %>
+                                    <div class="hashtags">
+                                        <% post.hashtags.forEach(tag=> { %>
+                                            <span class="chip">#<%= tag %></span>
+                                            <% }) %>
                                     </div>
-                                </div>
+                                    <% } %>
+                                        <div class="card-footer">
+                                            <div class="author">Por <span>
+                                                    <%= post.user ? post.user.name + ' ' + post.user.lastName
+                                                        : 'Desconocido' %>
+                                                </span></div>
+                                            <div class="actions">
+                                                <a href="/posts/edit/<%= post._id %>" class="btn-edit">✏️</a>
+                                                <form action="/posts/delete/<%= post._id %>" method="POST"
+                                                    style="display:inline;">
+                                                    <button type="submit" class="btn-delete"
+                                                        onclick="return confirm('¿Eliminar este post?')">🗑️</button>
+                                                </form>
+                                            </div>
+                                        </div>
                             </div>
                         </div>
                         <% }) %>
-        </div>
+                </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 
 </html>

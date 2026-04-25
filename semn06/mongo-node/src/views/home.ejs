@@ -1,24 +1,76 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
-    <title>Social Media - Home</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #0f0f0f;
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .logo {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #00c9ff, #92fe9d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 16px;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            color: #888;
+            margin-bottom: 50px;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #00c9ff, #92fe9d);
+            color: #0f0f0f;
+            font-weight: 700;
+            font-size: 1rem;
+            padding: 16px 36px;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 0 20px rgba(0, 201, 255, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 35px rgba(0, 201, 255, 0.5);
+        }
+    </style>
 </head>
 
-<body class="container center-align" style="margin-top: 80px;">
-    <h2 class="blue-text text-darken-2">Bienvenido a Social Media 🚀</h2>
-    <p class="flow-text">Conéctate, comparte y explora publicaciones</p>
-    <div class="row" style="margin-top: 50px;">
-        <div class="col s12 m12">
-            <a href="/posts/" class="btn-large waves-effect waves-light blue darken-2">
-                <i class="material-icons left">image</i> Ver Posts
-            </a>
-        </div>
+<body>
+    <div class="hero">
+        <div class="logo">● SocialMedia</div>
+        <p class="tagline">Conéctate, comparte y explora publicaciones</p>
+        <a href="/posts" class="btn-primary">⚡ Explorar Posts</a>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </body>
 
 </html>
