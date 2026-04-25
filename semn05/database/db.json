@@ -1,0 +1,180 @@
+{
+  "tickets": [
+    {
+      "id": "f5a53913-7940-45ec-9189-31d84b985a56",
+      "status": "nuevo",
+      "priority": "medium",
+      "assignedUser": null
+    },
+    {
+      "id": "59808cb3-f26a-4c33-abef-7aa3fa10baa9",
+      "status": "nuevo",
+      "priority": "medium",
+      "assignedUser": null
+    },
+    {
+      "id": "edcbc9f1-e1c9-4006-b8e1-277d3cada6f4",
+      "title": "Problema 1",
+      "description": "Ocurrió un error en el sistema",
+      "status": "nuevo",
+      "priority": "medium",
+      "assignedUser": null
+    },
+    {
+      "id": "5a3ed1ea-11b6-4f3a-896b-18984023625d",
+      "title": "Prueba correo",
+      "description": "Verificando envío de email",
+      "status": "nuevo",
+      "priority": "medium",
+      "assignedUser": null
+    },
+    {
+      "id": "497a2789-2fc3-461f-9417-b63d5edd0599",
+      "title": "Prueba correo",
+      "description": "Verificando envío de email",
+      "status": "nuevo",
+      "priority": "medium",
+      "assignedUser": null
+    },
+    {
+      "id": "71484a06-fd17-44e2-ad73-c532289fd2f4",
+      "title": "Prueba correo",
+      "description": "Verificando envío de email",
+      "status": "nuevo",
+      "priority": "medium",
+      "assignedUser": null
+    },
+    {
+      "id": "efef9cb3-57e2-450a-924c-b949f8f79509",
+      "title": "Prueba correo",
+      "description": "Verificando envío de email",
+      "status": "nuevo",
+      "priority": "medium",
+      "assignedUser": null
+    },
+    {
+      "id": "ebb770bc-dac5-4140-aac1-4632c5aab33a",
+      "title": "Prueba correo",
+      "description": "Verificando envío de email",
+      "status": "nuevo",
+      "priority": "medium",
+      "assignedUser": null
+    },
+    {
+      "id": "3d8303eb-e80a-4c06-9a7e-a3b3bb8aa290",
+      "title": "Prueba correo",
+      "description": "Verificando envío de email",
+      "status": "nuevo",
+      "priority": "medium",
+      "assignedUser": null
+    },
+    {
+      "id": "abdc606f-3e25-4514-b5d2-6631d7f8d87b",
+      "title": "Prueba correo",
+      "description": "Verificando envío de email",
+      "status": "nuevo",
+      "priority": "medium",
+      "assignedUser": null
+    }
+  ],
+  "notifications": [
+    {
+      "id": "d6373889-b80b-4dc1-aff8-2cbf2a2e0aaa",
+      "type": "email",
+      "message": "Nuevo ticket creado: Problema 1",
+      "status": "pending",
+      "ticketId": "fd363b6a-ddd6-4a7c-ab31-22da09557796"
+    },
+    {
+      "id": "dfa9ff8a-3463-48ea-9d26-929107f91749",
+      "type": "email",
+      "message": "El ticket fd363b6a-ddd6-4a7c-ab31-22da09557796 fue asignado a Tu nombre",
+      "status": "pending",
+      "ticketId": "fd363b6a-ddd6-4a7c-ab31-22da09557796"
+    },
+    {
+      "id": "f7482c74-bb98-4d22-bb9b-f8fb23f7e425",
+      "type": "email",
+      "message": "El ticket fd363b6a-ddd6-4a7c-ab31-22da09557796 fue asignado a david chumbi",
+      "status": "pending",
+      "ticketId": "fd363b6a-ddd6-4a7c-ab31-22da09557796"
+    },
+    {
+      "id": "e90282be-2a5c-4ce2-b49c-e4090e308ed9",
+      "type": "push",
+      "message": "El ticket fd363b6a-ddd6-4a7c-ab31-22da09557796 cambió a asignado",
+      "status": "pending",
+      "ticketId": "fd363b6a-ddd6-4a7c-ab31-22da09557796"
+    },
+    {
+      "id": "13aef031-4b4f-4ded-b804-69e67be0b01d",
+      "type": "email",
+      "message": "Nuevo ticket creado: undefined",
+      "status": "pending",
+      "ticketId": "f5a53913-7940-45ec-9189-31d84b985a56"
+    },
+    {
+      "id": "7ac07e63-23b7-49de-a400-648da17bd0a8",
+      "type": "email",
+      "message": "Nuevo ticket creado: undefined",
+      "status": "pending",
+      "ticketId": "59808cb3-f26a-4c33-abef-7aa3fa10baa9"
+    },
+    {
+      "id": "a0461621-b0ad-403b-bad0-a2c93768ef63",
+      "type": "email",
+      "message": "Nuevo ticket creado: Problema 1",
+      "status": "pending",
+      "ticketId": "edcbc9f1-e1c9-4006-b8e1-277d3cada6f4"
+    },
+    {
+      "id": "ae5b0863-fabc-4ca4-9253-1cea8dcb7ffc",
+      "type": "email",
+      "message": "Nuevo ticket creado: Prueba correo",
+      "status": "pending",
+      "ticketId": "5a3ed1ea-11b6-4f3a-896b-18984023625d"
+    },
+    {
+      "id": "a3679dc0-566d-4dd8-8975-3174ffb031a7",
+      "type": "email",
+      "message": "Nuevo ticket creado: Prueba correo",
+      "status": "pending",
+      "ticketId": "497a2789-2fc3-461f-9417-b63d5edd0599"
+    },
+    {
+      "id": "188a88cb-44e9-4b8b-99ab-bd61efd7c732",
+      "type": "email",
+      "message": "Nuevo ticket creado: Prueba correo",
+      "status": "pending",
+      "ticketId": "71484a06-fd17-44e2-ad73-c532289fd2f4"
+    },
+    {
+      "id": "c63b8a0c-5175-4930-9b5a-bc919d07e9c8",
+      "type": "email",
+      "message": "Nuevo ticket creado: Prueba correo",
+      "status": "pending",
+      "ticketId": "efef9cb3-57e2-450a-924c-b949f8f79509"
+    },
+    {
+      "id": "a1399eac-59ba-44c7-bb92-3e7cd8b0b83a",
+      "type": "email",
+      "message": "Nuevo ticket creado: Prueba correo",
+      "status": "pending",
+      "ticketId": "ebb770bc-dac5-4140-aac1-4632c5aab33a"
+    },
+    {
+      "id": "02d63af3-d55b-4975-b7b2-917a5a7f9d13",
+      "type": "email",
+      "message": "Nuevo ticket creado: Prueba correo",
+      "status": "pending",
+      "ticketId": "3d8303eb-e80a-4c06-9a7e-a3b3bb8aa290"
+    },
+    {
+      "id": "89abac40-4446-4112-8db8-c0d6d1ed1684",
+      "type": "email",
+      "message": "Nuevo ticket creado: Prueba correo",
+      "status": "pending",
+      "ticketId": "abdc606f-3e25-4514-b5d2-6631d7f8d87b"
+    }
+  ]
+}

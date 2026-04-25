@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    body { background-color: #141414; color: #fff; }
+
+    nav { background-color: #b71c1c; }
+    nav .brand-logo { font-weight: bold; letter-spacing: 2px; }
+
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)),
+                  url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=1400') center/cover no-repeat;
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+    .hero h1 { font-size: 3rem; font-weight: bold; color: #fff; text-shadow: 2px 2px 8px #000; }
+    .hero p  { font-size: 1.2rem; color: #ccc; margin-bottom: 30px; }
+    .hero .btn { background-color: #b71c1c; font-size: 1rem; padding: 0 30px; height: 48px; line-height: 48px; }
+    .hero .btn:hover { background-color: #d32f2f; }
+
+    .section-cards { padding: 40px 20px; }
+    .section-cards h4 { text-align: center; margin-bottom: 30px; color: #ef9a9a; }
+
+    .card { background-color: #1f1f1f; border-radius: 10px; }
+    .card .card-title { color: #ef9a9a !important; font-weight: bold; }
+    .card p { color: #ccc; }
+    .card .card-action a { color: #ef9a9a !important; }
+
+    footer { background-color: #0a0a0a; padding: 20px; text-align: center; color: #888; margin-top: 40px; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-wrapper container">
+      <a href="/" class="brand-logo"> CineApp</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/about">Acerca de</a></li>
+        <li><a href="/movies">Películas</a></li>
+        <li><a href="/contact">Contacto</a></li>
+        <li><a href="/admin">Admin</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <h1>Bienvenido a CineApp</h1>
+    <p>Registra y descubre tus películas favoritas</p>
+    <a href="/movies" class="btn waves-effect waves-light">
+      <i class="material-icons left">movie</i>Ver Películas
+    </a>
+  </div>
+
+  <!-- CARDS -->
+  <div class="container section-cards">
+    <h4>¿Qué puedes hacer?</h4>
+    <div class="row">
+      <div class="col s12 m4">
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title"><i class="material-icons">movie</i> Películas</span>
+            <p>Agrega y consulta tu colección de películas favoritas con todos sus detalles.</p>
+          </div>
+          <div class="card-action">
+            <a href="/movies">Ir a Películas</a>
+          </div>
+        </div>
+      </div>
+      <div class="col s12 m4">
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title"><i class="material-icons">email</i> Contacto</span>
+            <p>Envíanos un mensaje con tus sugerencias o consultas.</p>
+          </div>
+          <div class="card-action">
+            <a href="/contact">Ir a Contacto</a>
+          </div>
+        </div>
+      </div>
+      <div class="col s12 m4">
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title"><i class="material-icons">info</i> Acerca de</span>
+            <p>Conoce más sobre esta aplicación y sus funcionalidades.</p>
+          </div>
+          <div class="card-action">
+            <a href="/about">Ir a Acerca de</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 CineApp — Desarrollo de Aplicaciones Web Avanzado</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>

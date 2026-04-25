@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Películas</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    body { background-color: #141414; color: #fff; }
+
+    nav { background-color: #b71c1c; }
+    nav .brand-logo { font-weight: bold; letter-spacing: 2px; }
+
+    h3 { color: #ef9a9a; text-align: center; margin: 30px 0; }
+    h5 { color: #ef9a9a; margin-top: 40px; }
+
+    .card { background-color: #1f1f1f; border-radius: 10px; }
+    .card .card-title { color: #ef9a9a !important; }
+
+    input, textarea { color: #fff !important; border-bottom: 1px solid #ef9a9a !important; }
+    label { color: #ccc !important; }
+    .input-field .prefix.active { color: #ef9a9a; }
+    input:focus, textarea:focus { border-bottom: 2px solid #b71c1c !important; box-shadow: none !important; }
+
+    select.browser-default {
+      background-color: #2a2a2a;
+      color: #fff;
+      border: none;
+      border-bottom: 1px solid #ef9a9a;
+      border-radius: 4px;
+      padding: 10px;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .btn-agregar { background-color: #b71c1c; }
+    .btn-agregar:hover { background-color: #d32f2f; }
+
+    table { background-color: #1f1f1f; border-radius: 10px; overflow: hidden; }
+    thead tr { background-color: #b71c1c; }
+    thead th { color: #fff; padding: 14px; }
+    tbody tr { border-bottom: 1px solid #333; }
+    tbody tr:hover { background-color: #2a2a2a; }
+    tbody td { color: #ddd; padding: 12px; }
+
+    .badge-genero {
+      background-color: #b71c1c;
+      color: #fff;
+      padding: 3px 10px;
+      border-radius: 12px;
+      font-size: 0.8rem;
+    }
+
+    .empty-msg { text-align: center; color: #888; padding: 30px; font-size: 1.1rem; }
+
+    footer { background-color: #0a0a0a; padding: 20px; text-align: center; color: #888; margin-top: 40px; }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="nav-wrapper container">
+      <a href="/" class="brand-logo"> CineApp</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/about">Acerca de</a></li>
+        <li><a href="/movies">Películas</a></li>
+        <li><a href="/contact">Contacto</a></li>
+        <li><a href="/admin">Admin</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h3>Registro de Películas</h3>
+
+    <!-- FORMULARIO -->
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">Agregar nueva película</span>
+        <form action="/movies" method="POST">
+          <div class="row">
+            <div class="input-field col s12 m6">
+              <i class="material-icons prefix">title</i>
+              <input id="titulo" type="text" name="titulo" required>
+              <label for="titulo">Título</label>
+            </div>
+            <div class="input-field col s12 m6">
+              <i class="material-icons prefix">person</i>
+              <input id="director" type="text" name="director" required>
+              <label for="director">Director</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s12 m6">
+              <label style="color:#ccc; font-size:0.85rem;">Género</label>
+              <select name="genero" class="browser-default" required>
+                <option value="" disabled selected>Selecciona un género</option>
+                <option value="Acción">Acción</option>
+                <option value="Comedia">Comedia</option>
+                <option value="Drama">Drama</option>
+                <option value="Terror">Terror</option>
+                <option value="Ciencia Ficción">Ciencia Ficción</option>
+                <option value="Animación">Animación</option>
+              </select>
+            </div>
+            <div class="input-field col s12 m6">
+              <i class="material-icons prefix">calendar_today</i>
+              <input id="anio" type="number" name="anio" min="1900" max="2099" required>
+              <label for="anio">Año de estreno</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="material-icons prefix">notes</i>
+              <textarea id="sinopsis" class="materialize-textarea" name="sinopsis" required></textarea>
+              <label for="sinopsis">Sinopsis</label>
+            </div>
+          </div>
+          <button type="submit" class="btn waves-effect waves-light btn-agregar">
+            <i class="material-icons left">add</i>Agregar Película
+          </button>
+          <a href="/" class="btn waves-effect waves-light grey darken-1" style="margin-left:10px;">
+            <i class="material-icons left">home</i>Inicio
+          </a>
+        </form>
+      </div>
+    </div>
+
+    <!-- TABLA -->
+    <h5>📋 Lista de Películas</h5>
+
+    <% if (peliculas.length === 0) { %>
+      <div class="empty-msg">
+        <i class="material-icons" style="font-size:3rem; color:#555;">movie_filter</i>
+      </div>
+    <% } else { %>
+      <table class="responsive-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Título</th>
+            <th>Director</th>
+            <th>Género</th>
+            <th>Año</th>
+            <th>Sinopsis</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% peliculas.forEach((p, i) => { %>
+            <tr>
+              <td><%= i + 1 %></td>
+              <td><strong style="color:#fff;"><%= p.titulo %></strong></td>
+              <td><%= p.director %></td>
+              <td><span class="badge-genero"><%= p.genero %></span></td>
+              <td><%= p.anio %></td>
+              <td style="max-width:250px;"><%= p.sinopsis %></td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    <% } %>
+  </div>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
